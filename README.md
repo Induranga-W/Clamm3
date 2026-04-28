@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# [QR] QR Code Generator
 
-## Getting Started
+A fast, minimal QR code generator built with **Next.js 16** and **TypeScript** — no tracking, no third-party APIs, no limits.
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
+
+---
+
+## ✨ Features
+
+- **6 content types** — URL, Email, Phone, SMS, Wi-Fi, Plain Text
+- **6 color schemes** — Classic, Ocean, Violet, Forest, Ember, Inverted
+- **Adjustable size** — 128px to 600px
+- **Error correction levels** — L / M / Q / H
+- **Download as PNG** or **copy to clipboard** in one click
+- Live preview — regenerates instantly on every change
+- Fully client-side — nothing leaves your browser
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+
+### Installation
 
 ```bash
+# Clone the repo
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+
+# Install dependencies
+npm install
+
+# Start the dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tech Stack
 
-## Learn More
+| Tool | Purpose |
+|------|---------|
+| [Next.js 16](https://nextjs.org/) | React framework (App Router) |
+| [TypeScript](https://www.typescriptlang.org/) | Type safety |
+| [qrcode](https://www.npmjs.com/package/qrcode) | QR code generation |
+| [DM Sans + DM Mono](https://fonts.google.com/) | Typography |
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📁 Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+app/
+├── page.tsx        # Main QR generator page
+├── globals.css     # All styles (qr- prefixed)
+└── layout.tsx      # Root layout
+qrcode.d.ts         # Type declarations for qrcode module
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📦 Scripts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm run start    # Start production server
+npm run lint     # Run ESLint
+```
+
+---
+
+## 📄 License
+
+MIT — feel free to use, modify, and distribute.
