@@ -22,7 +22,7 @@ const COLORS = [
   { fg: "#7c2d12", bg: "#fff7ed", label: "Ember"    },
   { fg: "#ffffff", bg: "#0a0a0a", label: "Inverted" },
   { fg: "#ffa2a2", bg: "#000000", label: "RedBlack" },
-  { fg: "#008cff", bg: "#ffffff", label: "BlueBlack" },
+  { fg: "#008cff", bg: "#ffffff", label: "BlueWhite" },
 ];
 
 const EC_HINTS: Record<ErrorLevel, string> = {
