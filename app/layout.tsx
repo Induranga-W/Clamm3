@@ -26,8 +26,44 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const removeAttr = (node) => {
+                  if (node.nodeType === 1) {
+                    if (node.hasAttribute('bis_skin_checked')) {
+                      node.removeAttribute('bis_skin_checked');
+                    }
+                    node.querySelectorAll('[bis_skin_checked]').forEach(el => el.removeAttribute('bis_skin_checked'));
+                  }
+                };
+                const observer = new MutationObserver((mutations) => {
+                  for (const mutation of mutations) {
+                    if (mutation.type === 'childList') {
+                      mutation.addedNodes.forEach(removeAttr);
+                    } else if (mutation.type === 'attributes' && mutation.target.nodeType === 1) {
+                      if (mutation.target.hasAttribute('bis_skin_checked')) {
+                        mutation.target.removeAttribute('bis_skin_checked');
+                      }
+                    }
+                  }
+                });
+                observer.observe(document.documentElement, {
+                  childList: true,
+                  subtree: true,
+                  attributes: true,
+                  attributeFilter: ['bis_skin_checked']
+                });
+              })();
+            `
+          }}
+        />
+      </head>
+      <body className="min-h-full flex flex-col" suppressHydrationWarning>{children}</body>
     </html>
   );
 }
